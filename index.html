@@ -6,23 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Protrans</title>
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/images/logo.svg">
 </head>
 
-<body>
+<body class="dark-theme">
   <div class="main-container">
     <div class="flex-row-e">
       <div class="flag-container">
-        <div class="flag" id="languageFlag" data-current="iran" title="Change language"></div>
+        <div class="flag" id="languageFlag" data-current="usa" title="تغییر زبان">
+          <span class="flag-text"></span>
+        </div>
       </div>
       <div class="monogram" id="monogram"></div>
       <a class="translator" href="#"></a>
       <nav>
-        <a href="#" class="home">Home</a>
-        <a href="#" class="about-us">About us</a>
-        <a href="#" class="contact-us">Contact us</a>
+        <a href="#" class="home" data-en="Home" data-fa="خانه">Home</a>
+        <a href="#" class="about-us" data-en="About us" data-fa="درباره ما">About us</a>
+        <a href="#" class="contact-us" data-en="Contact us" data-fa="تماس با ما">Contact us </a>
+      </nav>
     </div>
-    </nav>
+
     <svg class="proverb-translator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80">
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -36,33 +40,47 @@
           <animate attributeName="x2" values="0%;200%" dur="4s" repeatCount="indefinite" />
         </linearGradient>
       </defs>
-      <text x="0" y="70" font-size="80" font-weight="700" letter-spacing="1.6" fill="url(#gradient)">
+      <text x="0" y="70" font-size="80" font-weight="700" letter-spacing="1.6" fill="url(#gradient)" class="svg-text"
+        data-en="Proverb Translator" data-fa="مترجم ضرب المثل">
         Proverb Translator
       </text>
     </svg>
-    <span class="first-world">The first in the
-      world</span><span class="enter-word">Enter a word or a phrase to find the proverb.
+
+    <span class="first-world" data-en="The first in the world" data-fa="اولین در جهان">The first in the world </span>
+    <span class="enter-word" data-en="Enter a word or a phrase to find the proverb"
+      data-fa="یک کلمه یا عبارت وارد کنید تا ضرب المثل پیدا شود">
+      Enter a word or a phrase to find the proverb
     </span>
+
     <div class="polygon"></div>
+
     <div class="flex-row-b">
       <div class="rectangle">
         <div class="flex-row-cb">
           <div class="rectangle-change-color"></div>
+
+          <input id="typingInput" type="text" class="rectangle-2 enter-word-phrase"
+            placeholder="Enter a word or a phrase" data-en-placeholder="Enter a word or a phrase"
+            data-fa-placeholder="یک کلمه یا عبارت وارد کنید">
+
           <div class="language-selector-container">
             <div class="rectangle-1 language-selector">
-              <span class="selected-option">English Translation</span>
               <div class="nav-arrow-down"></div>
+              <span class="selected-option white-text-exception" data-en="English Translation"
+                data-fa="ترجمه انگلیسی">English Translation</span>
 
               <div class="dropdown-menu">
-                <div class="dropdown-item" data-value="English Translation">English Translation</div>
-                <div class="dropdown-item" data-value="Persian Translation">Persian Translation</div>
-                <div class="dropdown-item" data-value="Culture And Same Proverbs">Culture And Same Proverbs</div>
+                <div class="dropdown-item" data-value="English Translation" data-en="English Translation"
+                  data-fa="ترجمه انگلیسی">English Translation</div>
+                <div class="dropdown-item" data-value="Persian Translation" data-en="Persian Translation"
+                  data-fa="ترجمه فارسی">Persian Translation </div>
+                <div class="dropdown-item" data-value="History And Same Proverbs" data-en="History And Same Proverbs"
+                  data-fa="تاریخچه و ضرب المثل‌های مشابه">History And Same Proverbs </div>
               </div>
             </div>
           </div>
-          <input id="typingInput" type="text" class="rectangle-2 enter-word-phrase "
-            placeholder="Enter a word or a phrase">
         </div>
+
         <div class="flex-row-cef">
           <div class="rectangle-3"></div>
           <div class="rectangle-change-color-4"></div>
@@ -71,7 +89,7 @@
       <div class="rectangle-change-color-5"></div>
     </div>
   </div>
+  <script src="scripts.js"></script>
 </body>
-<script src="scripts.js"></script>
 
 </html>
